@@ -10,4 +10,6 @@ scrape_configs:
   - job_name: 'pushgateway'
     honor_labels: false
     static_configs:
+      # the hostname `pushgateway` works for instances running in docker on linux
+      # TODO(): add support for other platforms/ways
       - targets: [ 'pushgateway:9091' ]
